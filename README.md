@@ -165,6 +165,17 @@ python -m uvicorn app.main:app --port 8000
 └── docs/                  # README 截图
 ```
 
+## 🤝 参与贡献
+
+欢迎以 **Contributor（贡献者）** 身份参与，无需任何权限：
+
+1. **Fork** 本仓库到你的账号
+2. 创建特性分支：`git checkout -b feat/你的功能`
+3. 提交改动并 push 到你的 Fork
+4. 到原仓库发起 **Pull Request**，描述改动内容，等待审核合并
+
+也欢迎提 [Issue](https://github.com/Starry-16/AI-Offer/issues) 反馈问题或建议。
+
 ## 数据与隐私
 
 所有数据（简历、投递记录、AI Key、邮箱授权码、附件、证件照）均保存在本地 `data/` 目录，不会上传任何第三方服务器；AI 请求仅发送你主动触发的内容。`data/` 已被 `.gitignore` 排除，请勿手动提交。
