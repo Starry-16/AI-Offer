@@ -4,7 +4,7 @@
 
 数据全部保存在本地 JSON 文件，无需数据库；AI 能力走 OpenAI 兼容接口（Kimi / DeepSeek / 通义等均可接入）。
 
-![概览](docs/01_overview.png)
+![秋招助手概览](docs/overview.png)
 
 ## 功能特性
 
@@ -126,9 +126,3 @@ python -m uvicorn app.main:app --port 8000
 ## 数据与隐私
 
 所有数据（简历、投递记录、AI Key、邮箱授权码、附件、证件照）均保存在本地 `data/` 目录，不会上传任何第三方服务器；AI 请求仅发送你主动触发的内容。`data/` 已被 `.gitignore` 排除，请勿手动提交。
-
-## 更多截图
-
-| 投递管理 | 题库 | AI 助手 |
-| --- | --- | --- |
-| ![投递管理](docs/02_applications.png) | ![题库](docs/03_questions.png) | ![AI 助手](docs/04_ai_assistant.png) |
