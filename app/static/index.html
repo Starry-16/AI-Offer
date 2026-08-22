@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>秋招助手</title>
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      <span>秋招助手</span>
+    </div>
+    <nav>
+      <a href="#" data-tab="dashboard" class="active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+        <span>概览</span>
+      </a>
+      <a href="#" data-tab="applications">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg>
+        <span>投递管理</span>
+      </a>
+      <a href="#" data-tab="companies">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 9h1M9 13h1M9 17h1M14 9h1M14 13h1M14 17h1"/></svg>
+        <span>企业库</span>
+      </a>
+      <a href="#" data-tab="match">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+        <span>岗位匹配</span>
+      </a>
+      <a href="#" data-tab="resumes">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        <span>简历库</span>
+      </a>
+      <a href="#" data-tab="questions">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <span>题库</span>
+      </a>
+      <a href="#" data-tab="ai">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg>
+        <span>AI 助手</span>
+      </a>
+      <a href="#" data-tab="settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        <span>设置</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">数据保存在本地 data/ 目录</div>
+  </aside>
+
+  <main class="content">
+    <section id="tab-dashboard" class="tab active"></section>
+    <section id="tab-applications" class="tab">
+      <div class="tab-head">
+        <div>
+          <h1>投递管理</h1>
+          <p class="sub">记录每一份投递的时间线，不错过任何流程</p>
+        </div>
+        <div class="head-actions">
+          <button class="btn" id="btn-import-application">智能导入</button>
+          <button class="btn btn-primary" id="btn-new-application">+ 新增投递</button>
+        </div>
+      </div>
+      <div class="toolbar" id="application-toolbar">
+        <div class="chips" id="application-status-chips"></div>
+        <div class="toolbar-right">
+          <select class="input select" id="application-category">
+            <option value="">全部类型</option>
+            <option value="秋招">秋招</option>
+            <option value="实习">实习</option>
+          </select>
+          <input type="search" class="input" id="application-search" placeholder="搜索公司 / 岗位…">
+        </div>
+      </div>
+      <div id="application-list" class="table-wrap"></div>
+    </section>
+
+    <section id="tab-companies" class="tab">
+      <div class="tab-head">
+        <div>
+          <h1>企业库</h1>
+          <p class="sub">互联网 / 金融企业校招投递入口汇总，可自行增删</p>
+        </div>
+        <div class="head-actions">
+          <button class="btn" id="btn-seed-companies">同步内置库</button>
+          <button class="btn btn-primary" id="btn-new-company">+ 新增企业</button>
+        </div>
+      </div>
+      <div class="toolbar" id="company-toolbar">
+        <div class="chips" id="company-category-chips"></div>
+        <div class="toolbar-right">
+          <select class="input select" id="company-position"><option value="">全部岗位</option></select>
+          <input type="search" class="input" id="company-search" placeholder="搜索公司名…">
+        </div>
+      </div>
+      <div id="company-list" class="table-wrap"></div>
+    </section>
+
+    <section id="tab-match" class="tab">
+      <div class="tab-head">
+        <div>
+          <h1>岗位匹配</h1>
+          <p class="sub">根据简历内容与企业岗位方向自动匹配，按匹配度从高到低排序</p>
+        </div>
+      </div>
+      <div class="card match-controls">
+        <select class="input select" id="match-resume"></select>
+        <select class="input select" id="match-position"><option value="">全部岗位类型</option></select>
+        <button class="btn btn-primary" id="btn-do-match">开始匹配</button>
+      </div>
+      <div id="match-result" class="match-result"></div>
+    </section>
+
+    <section id="tab-resumes" class="tab">
+      <div class="tab-head">
+        <div>
+          <h1>简历库</h1>
+          <p class="sub">多版本简历集中管理，支持 AI 润色</p>
+        </div>
+        <button class="btn btn-primary" id="btn-new-resume">+ 新建简历</button>
+      </div>
+      <div id="resume-grid" class="card-grid"></div>
+    </section>
+
+    <section id="tab-questions" class="tab">
+      <div class="tab-head">
+        <div>
+          <h1>题库</h1>
+          <p class="sub">笔试题 / 八股 / 场景题，重点突破薄弱项</p>
+        </div>
+        <div class="head-actions">
+          <button class="btn" id="btn-practice">开始练习</button>
+          <button class="btn btn-primary" id="btn-new-question">+ 新增题目</button>
+        </div>
+      </div>
+      <div class="toolbar" id="question-toolbar">
+        <select class="input select" id="question-category"><option value="">全部分类</option></select>
+        <select class="input select" id="question-mastery">
+          <option value="">全部掌握度</option>
+          <option value="2">≤ 2 星（待巩固）</option>
+          <option value="3">≤ 3 星</option>
+          <option value="4">≤ 4 星</option>
+        </select>
+        <label class="checkbox"><input type="checkbox" id="question-wrong">只看错题本</label>
+        <input type="search" class="input grow" id="question-search" placeholder="搜索题目 / 答案…">
+      </div>
+      <div id="question-list" class="question-list"></div>
+    </section>
+
+    <section id="tab-ai" class="tab">
+      <div class="tab-head">
+        <div>
+          <h1>AI 助手</h1>
+          <p class="sub">模拟面试、简历润色、八股解答（需在设置中配置 API）</p>
+        </div>
+      </div>
+      <div class="ai-layout">
+        <div class="ai-chat card">
+          <div class="chat-toolbar">
+            <label for="chat-model">模型</label>
+            <select id="chat-model" class="input"></select>
+          </div>
+          <div id="chat-messages" class="chat-messages"></div>
+          <div class="chat-input-row">
+            <textarea id="chat-input" class="input" rows="2" placeholder="输入你的问题，Ctrl+Enter 发送…"></textarea>
+            <button class="btn btn-primary" id="btn-chat-send">发送</button>
+          </div>
+        </div>
+        <div class="ai-side">
+          <div class="card">
+            <h3>快捷指令</h3>
+            <button class="btn btn-block" id="btn-mock-interview">模拟面试出题</button>
+            <button class="btn btn-block" id="btn-practice-answer">面试题详解</button>
+            <p class="hint">「面试题详解」：先写题目，点击后由 AI 给出标准答案思路。</p>
+          </div>
+          <div class="card" id="mock-form-wrap" hidden>
+            <h3>模拟面试设置</h3>
+            <label class="field-label">目标岗位</label>
+            <input class="input" id="mock-position" value="后端开发工程师">
+            <label class="field-label">考察方向</label>
+            <select class="input select" id="mock-category">
+              <option>综合</option><option>计算机网络</option><option>操作系统</option>
+              <option>数据库</option><option>算法</option><option>Java</option><option>项目经历</option>
+            </select>
+            <label class="field-label">题目数量</label>
+            <select class="input select" id="mock-count">
+              <option>3</option><option selected>5</option><option>8</option><option>10</option>
+            </select>
+            <button class="btn btn-primary btn-block" id="btn-mock-generate">生成题目</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-settings" class="tab">
+      <div class="tab-head">
+        <div>
+          <h1>设置</h1>
+          <p class="sub">配置 AI 接口与数据说明</p>
+        </div>
+      </div>
+      <div class="card settings-card">
+        <h2>AI 接口配置</h2>
+        <p class="sub">选择一个服务商，粘贴 API Key 即可，接口地址和模型会自动填好</p>
+        <label class="field-label">AI 服务商</label>
+        <select class="input" id="cfg-provider"></select>
+        <!-- 预设服务商：自动填充的接口信息（只读展示） -->
+        <div id="cfg-auto-info" class="cfg-auto-info">
+          <div class="cfg-auto-row"><span>接口地址</span><code id="cfg-auto-url"></code></div>
+          <div class="cfg-auto-row"><span>可选模型</span><code id="cfg-auto-model"></code></div>
+        </div>
+        <!-- 自定义：手动填写 -->
+        <div id="cfg-custom-fields" style="display:none">
+          <label class="field-label">接口地址 Base URL</label>
+          <input class="input" id="cfg-base-url" placeholder="https://api.openai.com/v1">
+          <label class="field-label">模型列表（多个用英文逗号分隔，第一个为默认）</label>
+          <input class="input" id="cfg-models" placeholder="gpt-4o-mini, gpt-4o">
+        </div>
+        <label class="field-label">API Key</label>
+        <input class="input" id="cfg-api-key" type="password" placeholder="粘贴你的 API Key">
+        <a id="cfg-key-link" class="cfg-key-link" href="#" target="_blank" rel="noopener">去官网获取 API Key →</a>
+        <div class="settings-actions">
+          <button class="btn btn-primary" id="btn-save-config">保存配置</button>
+          <button class="btn" id="btn-test-config">测试连接</button>
+        </div>
+      </div>
+      <div class="card settings-card">
+        <h2>浏览器自动填写插件</h2>
+        <p class="sub">在企业校招官网登录后，点页面右下角的「秋」悬浮按钮，选择简历即可 AI 自动填写表单。</p>
+        <div class="ext-steps">
+          <p><b>安装步骤（一次性，Edge / Chrome 通用）：</b></p>
+          <ol>
+            <li>浏览器地址栏打开 <code>edge://extensions</code>（Chrome 为 <code>chrome://extensions</code>）</li>
+            <li>打开左侧「开发人员模式」开关</li>
+            <li>点「加载解压缩的扩展」，选择本项目下的 <code>extension</code> 文件夹</li>
+            <li>保持本服务运行（插件通过 <code>127.0.0.1:8000</code> 读取简历和调用 AI）</li>
+          </ol>
+          <p class="sub">仅电脑端可用；填写结果会绿色高亮，请检查后再自行提交。</p>
+        </div>
+      </div>
+      <div class="card settings-card">
+        <h2>邮箱进度同步</h2>
+        <p class="sub">自动读取招聘通知邮件（投递确认 / 测评 / 笔试 / 面试 / Offer / 感谢信），AI 解析后同步投递进度；台账里没有的投递会自动收录进来，启用后每 6 小时自动执行。</p>
+        <label class="field-label">邮箱</label>
+        <select class="input" id="em-preset"></select>
+        <div class="cfg-auto-info">
+          <div class="cfg-auto-row"><span>IMAP 服务</span><code id="em-host-view"></code></div>
+          <div class="cfg-auto-row"><span>授权码怎么来</span><code id="em-help"></code></div>
+        </div>
+        <label class="field-label">邮箱账号</label>
+        <input class="input" id="em-user" placeholder="you@qq.com">
+        <label class="field-label">授权码（不是登录密码）</label>
+        <input class="input" id="em-pass" type="password" placeholder="粘贴授权码">
+        <label class="field-label">每次扫描最近几天的邮件</label>
+        <input class="input" id="em-days" type="number" min="1" max="60" value="14">
+        <label class="em-enable"><input type="checkbox" id="em-enabled"> 启用每 6 小时自动同步</label>
+        <div class="settings-actions">
+          <button class="btn btn-primary" id="btn-save-email">保存邮箱配置</button>
+          <button class="btn" id="btn-email-sync">立即同步一次</button>
+        </div>
+        <p class="sub" id="em-last-run"></p>
+      </div>
+      <div class="card settings-card">
+        <h2>数据说明</h2>
+        <p class="sub">所有数据以 JSON 文件形式保存在项目 data/ 目录下，无任何云端上传；备份时复制整个 data/ 目录即可。</p>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div id="modal-root"></div>
+<div id="toast-root"></div>
+<div id="practice-root"></div>
+<script src="/static/js/app.js"></script>
+</body>
+</html>

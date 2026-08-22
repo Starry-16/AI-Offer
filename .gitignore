@@ -1,0 +1,24 @@
+# ===== 本地数据与隐私（绝不上传）=====
+# 简历、投递记录、AI Key、邮箱授权码、附件、证件照等全部本地数据
+data/
+
+# ===== 运行产物 =====
+*.log
+
+# ===== 本地工具（cloudflared 隧道等，按需自行下载）=====
+tools/
+
+# ===== IDE / 诊断 =====
+.qoder/
+diag_*.png
+
+# ===== Python =====
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# ===== 系统 =====
+.DS_Store
+Thumbs.db

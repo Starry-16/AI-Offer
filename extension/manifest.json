@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "秋招助手 · 简历自动填写",
+  "version": "1.1.7",
+  "description": "在企业校招官网一键自动填写简历表单，数据来自本地秋招助手（需保持本地服务运行）。",
+  "permissions": ["storage", "alarms", "tabs"],
+  "action": { "default_title": "秋招助手 · 简历自动填写" },
+  "host_permissions": [
+    "http://127.0.0.1:8000/*",
+    "http://localhost:8000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
