@@ -72,8 +72,8 @@
 
 ```bash
 # 1. 克隆仓库
-git clone <仓库地址>
-cd 秋招助手
+git clone https://github.com/Starry-16/AI-Offer.git
+cd AI-Offer
 
 # 2. 安装依赖
 pip install -r requirements.txt
